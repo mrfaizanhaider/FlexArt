@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en" ng-app="orientPlay">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{name}}</title>
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="lib/mdl/material.css">
+	
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="stylesheet" href="lib/grid/bootstrap.css">
+    <link rel="stylesheet" href="lib/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="lib/slick-carousel/slick/slick-theme.css">
+    <style>
+    </style>
+  </head>
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="android-title mdl-layout-title">
+            <a href="#/"><img class="android-logo-image" src="img/main-logo.png" alt="OrientPlat.tv"></a>
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field" />
+            </div>
+          </div>
+          <!-- Navigation -->
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#/">home</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#/movie">movies</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#/tvShows">tv shows </a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#/people">people</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="#/channel">channel</a>
+            </nav>
+          </div>
+          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li class="mdl-menu__item"><a href="#/login">Login</a></li>
+            <li class="mdl-menu__item"><a href="#/creatAccount">Creat Account</a></li>
+          </ul>
+          <span class="android-mobile-title mdl-layout-title">
+            <img class="android-logo-image" src="img/android-logo-white.png">
+          </span>
+        </div>
+      </div>
+
+      <div class="android-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title">
+          <img class="android-logo-image" src="img/android-logo-white.png" alt="OrientPlay.tv">
+        </span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="#/movie">Movies</a>
+          <a class="mdl-navigation__link" href="#/tvShows">Tv Shows</a>
+          <a class="mdl-navigation__link" href="#/people">People</a>
+          <a class="mdl-navigation__link" href="#/channel">Channel</a>
+          <div class="android-drawer-separator"></div>
+          <span class="mdl-navigation__link" href="">User Option</span>
+           <a class="mdl-navigation__link" href="#/login">Login</a>
+          <a class="mdl-navigation__link" href="#/creatAccount">Creat Account</a>
+        </nav>
+      </div>
+      <div class="android-content mdl-layout__content">
+      	<main>
+           <div class="container">
+                <div class="row">
+                    <div ng-view></div>
+                </div>    
+           </div> 
+      	</main>
+		 <footer class="android-footer mdl-mega-footer">
+          <div class="mdl-mega-footer--top-section">
+            <div class="mdl-mega-footer--left-section">
+              <button class="mdl-mega-footer--social-btn"></button>
+              &nbsp;
+              <button class="mdl-mega-footer--social-btn"></button>
+              &nbsp;
+              <button class="mdl-mega-footer--social-btn"></button>
+            </div>
+          </div>
+
+          <div class="mdl-mega-footer--middle-section">
+            <p class="mdl-typography--font-light">Satellite imagery: © 2015 Astrium, DigitalGlobe</p>
+            <p class="mdl-typography--font-light">Some channels and shows may not be available in all areas</p>
+          </div>
+
+          <div class="mdl-mega-footer--bottom-section">
+            <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
+              Versions
+              <i class="material-icons">arrow_drop_up</i>
+            </a>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
+              <li class="mdl-menu__item">5.0 OPT-MD</li>
+              <li class="mdl-menu__item">4.4 OPT-BS</li>
+              <li class="mdl-menu__item">Orient History</li>
+            </ul>
+            <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
+              For Developers
+              <i class="material-icons">arrow_drop_up</i>
+            </a>
+            <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
+              <li class="mdl-menu__item">Developer Resources</li>
+              <li class="mdl-menu__item">OrientPlay Open Source Project</li>
+              <li class="mdl-menu__item">OrientPlay SDK</li>
+              <li class="mdl-menu__item">OrientPlay for Work</li>
+            </ul>
+            <a class="android-link mdl-typography--font-light" href="">Blog</a>
+            <a class="android-link mdl-typography--font-light" href="">Privacy Policy</a>
+          </div>
+
+        </footer>
+      </div>
+    </div>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/slick-carousel/slick/slick.min.js"></script>
+	<script src="lib/angular-slick-carousel/dist/angular-slick.min.js"></script>
+	<script src="lib/angular-route/angular-route.min.js"></script>
+	<script src="src/app.js"></script>
+    <script src="src/material.js"></script>
+
+
+  </body>
+</html>
